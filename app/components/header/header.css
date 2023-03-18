@@ -1,0 +1,66 @@
+.menu{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid rgb(218, 218, 218);
+}
+
+.h-left-section{
+    width: 571px;
+    height: 52px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.h-right-section{
+    width: 484.41px;
+    padding: 0 20px;
+}
+
+.logo-section{
+    width: 105px;
+    height: 52px;
+    background-color: #E60012;
+}
+
+.logo{
+    width: 69px;
+    height: 17.06px;
+    background-size: cover;
+}
+
+span{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.icon{
+    width: 18.06px;
+    height: 18.01px;
+    margin: 0 10px 0 0;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.searcher-input{
+    width: 450px;
+    height: 34px;
+    border-bottom: 1px solid;
+
+}
+
+input{
+    width: 233.19px;
+    height: 33.2px;
+    background-color: transparent;
+    border: none;
+}
+
+button{
+    background-color: transparent;
+    border: none;
+}

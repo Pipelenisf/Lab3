@@ -11,8 +11,8 @@ class AppContainer extends HTMLElement{
 
     const aHeader = this.ownerDocument.createElement(
             "app-header") as Header;
-        aHeader.setAttribute(AppHeader.logo, "Hola");
-        aHeader.setAttribute(AppHeader.search, "");
+        aHeader.setAttribute(AppHeader.logo, "https://logodownload.org/wp-content/uploads/2017/04/nintendo-logo-1-1.png");
+        aHeader.setAttribute(AppHeader.search, "https://uxwing.com/wp-content/themes/uxwing/download/user-interface/search-icon.png");
         aHeader.setAttribute(AppHeader.support, "");
         aHeader.setAttribute(AppHeader.wlist, "");
         aHeader.setAttribute(AppHeader.account, "");
