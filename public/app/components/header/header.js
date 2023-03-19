@@ -38,11 +38,17 @@ class Header extends HTMLElement {
             <section class="menu">
                 <div class="h-left-section">
                     <section class="logo-section">
-                        <div style="background-image: url(${this.logo || "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Picture_icon_BLACK.svg/1156px-Picture_icon_BLACK.svg.png"});" class="logo"></div>
+
+                        <svg viewBox="0 0 97 24" xmlns="http://www.w3.org/2000/svg" width="69" role="presentation" alt="" data-testid="NintendoRacetrackLogoIcon" size="69" color="white">
+                        <path class="logo" d="${this.logo || "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Picture_icon_BLACK.svg/1156px-Picture_icon_BLACK.svg.png"}" fill="currentColor"></path>
+                        </svg>
                     </section>
-                    <span class="searcher-input">
-                        <div class="icon" style="background-image: url(${this.search || "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Picture_icon_BLACK.svg/1156px-Picture_icon_BLACK.svg.png"});"></div>
-                        <input placeholder="Busca juegos, equipos, noticias y más">
+                    <span class="searcher-input c-transition">
+                        <svg class="svg-icon" data-name="Magnifying glass" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" class="SearchInputstyles__SearchIcon-sc-n42o5d-1 jNtoTz" width="18" role="presentation" alt="" data-testid="MagnifyingGlassIcon" size="18" color="currentColor">
+                            <path class="icon" fill-rule="evenodd" clip-rule="evenodd" fill="currentColor" d="${this.search || "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Picture_icon_BLACK.svg/1156px-Picture_icon_BLACK.svg.png"}"></path>
+                        </svg>
+
+                        <input class="c-transition" placeholder="Busca juegos, equipos, noticias y más">
                             <div class="select"> <p>Todas las cat...</p></div>
                         </input> 
                     </span>
@@ -69,7 +75,6 @@ class Header extends HTMLElement {
                     </button>
                 </div>
             </section>
-
 
             <section>
             
