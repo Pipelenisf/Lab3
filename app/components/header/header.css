@@ -16,6 +16,8 @@
 }
 
 .h-right-section{
+    display: flex;
+    justify-content: space-between;
     width: 484.41px;
     padding: 0 20px;
 }
@@ -46,10 +48,13 @@ span{
     margin: 0 10px 0 0;
 }
 
-.icon{
+.s-icon{
     width: 18.06px;
     height: 18.01px;
-    margin: 0 10px 0 0;
+}
+
+.secondary-icon{
+    margin: 0 6px 0 0;
 }
 
 .searcher-input{
@@ -80,4 +85,21 @@ input{
 button{
     background-color: transparent;
     border: none;
+}
+
+@font-face {
+	font-family: 'Museo Sans';
+    src: url(../../sources/museo_sans_ssv/museo_sans_ssv/MuseoSans700/MuseoSans_700.otf);
+}
+
+.links{
+    font-family: inherit;
+    font-weight: 700;
+    font-size: 14px;
+}
+
+.text{
+    font-family: inherit;
+    font-weight: 400;
+    font-size: 14px;
 }
