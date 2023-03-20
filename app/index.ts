@@ -1,9 +1,12 @@
 // import  './components/index.js';
 //import headerData from './components/data/headerData.js';
 import Header, {AppHeader} from './components/header/header.js';
+import OfferCard, {oCard} from './components/card/card.js';
+import oCardData from './components/data/oCardData.js';
 class AppContainer extends HTMLElement{
 
     hAttributes: Header;
+    oCardAttributes: OfferCard[] = [];
 
    constructor(){
     super();
@@ -17,6 +20,15 @@ class AppContainer extends HTMLElement{
         aHeader.setAttribute(AppHeader.wlist, "M22.3 1.3c-2.3 0-4.5 1-6.3 2.8-1.7-1.8-3.9-2.8-6.3-2.8C4.4 1.3 0 5.7 0 11.2c0 2.6 1.2 5.1 3.3 7.3L15 30.2c.3.3.6.4 1 .4.3 0 .7-.1 1-.4l11.6-11.6c1.5-1.8 3.3-4.3 3.3-7.5.1-5.4-4.3-9.8-9.6-9.8z");
         aHeader.setAttribute(AppHeader.account, "M16.22 19.41A9.71 9.71 0 1 1 26 9.7a9.74 9.74 0 0 1-9.8 9.71M1.84 32a10.88 10.88 0 0 1 10.94-10.74h6.57A10.88 10.88 0 0 1 30.29 32H1.84");
         this.hAttributes = aHeader;
+    
+        oCardData.forEach((card) => {
+            const oCards = this.ownerDocument.createElement(
+                "offer-card") as OfferCard;
+                oCards.setAttribute(oCard.thumbnail, card.thumbnail);
+                oCards.setAttribute(oCard.ctitle, card.ctitle);
+                oCards.setAttribute(oCard.device, card.device);
+                this.oCardAttributes.push(oCards);
+        });
     }
     
    connectedCallback(){
@@ -28,9 +40,14 @@ class AppContainer extends HTMLElement{
             this.shadowRoot.innerHTML= ``;
             
             const headerSection = this.ownerDocument.createElement("section")
+            const oCardSection = this.ownerDocument.createElement("section")
 
             headerSection.appendChild(this.hAttributes);
             this.shadowRoot.appendChild(headerSection);
+
+            this.oCardAttributes.forEach((oCards) =>{
+                this.shadowRoot?.appendChild(oCards);
+            })
         
             
         } 
