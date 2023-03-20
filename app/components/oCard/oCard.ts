@@ -36,14 +36,13 @@ class OfferCard extends HTMLElement{
     render(){
         if(this.shadowRoot)
         this.shadowRoot.innerHTML = `
-        <section class="o-card-section">
+        <link rel="stylesheet" href="../app/components/oCard/oCard.css">
             <div class="o-card">
                 <div class="card" style="background-image:url(${this.thumbnail || "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Picture_icon_BLACK.svg/1156px-Picture_icon_BLACK.svg.png"});">
                 </div>
                 <p class="title">${this.ctitle || "Not found"}</p>
                 <p class="device">${this.device || "No device"}</p> 
             </div>
-        </section>
         `;
     }
 }

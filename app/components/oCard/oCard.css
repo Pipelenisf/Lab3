@@ -1,0 +1,17 @@
+.o-card-section{
+    display: flex;
+    flex-direction: row;
+}
+
+.o-card{
+    width: 262px;
+    height: 284.08px;
+}
+
+.card{
+    width: auto;
+    height: 146.48px;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}

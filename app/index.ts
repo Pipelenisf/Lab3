@@ -1,7 +1,7 @@
 // import  './components/index.js';
 //import headerData from './components/data/headerData.js';
 import Header, {AppHeader} from './components/header/header.js';
-import OfferCard, {oCard} from './components/card/card.js';
+import OfferCard, {oCard} from './components/oCard/oCard.js';
 import oCardData from './components/data/oCardData.js';
 class AppContainer extends HTMLElement{
 
@@ -40,8 +40,7 @@ class AppContainer extends HTMLElement{
             this.shadowRoot.innerHTML= ``;
             
             const headerSection = this.ownerDocument.createElement("section")
-            const oCardSection = this.ownerDocument.createElement("section")
-
+            
             headerSection.appendChild(this.hAttributes);
             this.shadowRoot.appendChild(headerSection);
 

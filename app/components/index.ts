@@ -1,2 +1,2 @@
 import './header/header.js';
-import './card/card.js';
+import './oCard/oCard.js';
