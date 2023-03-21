@@ -1,3 +1,7 @@
+header{
+    position: sticky;
+}
+
 .menu{
     display: flex;
     flex-direction: row;
@@ -85,21 +89,7 @@ input{
 button{
     background-color: transparent;
     border: none;
-}
-
-@font-face {
-	font-family: 'Museo Sans';
-    src: url(../../sources/museo_sans_ssv/museo_sans_ssv/MuseoSans700/MuseoSans_700.otf);
-}
-
-.links{
-    font-family: inherit;
+    font-family: 'Figtree', sans-serif;
     font-weight: 700;
-    font-size: 14px;
-}
-
-.text{
-    font-family: inherit;
-    font-weight: 400;
-    font-size: 14px;
+    font-size: 15px;
 }
