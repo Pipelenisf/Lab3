@@ -28,13 +28,18 @@ class AppContainer extends HTMLElement {
     }
     render() {
         if (this.shadowRoot) {
-            this.shadowRoot.innerHTML = ``;
+            this.shadowRoot.innerHTML = `
+            <link rel="stylesheet" href="../app/style.css">
+            `;
             const headerSection = this.ownerDocument.createElement("section");
             headerSection.appendChild(this.hAttributes);
             this.shadowRoot.appendChild(headerSection);
-            this.oCardAttributes.forEach((oCards) => {
+            const oCardSection = this.ownerDocument.createElement("section");
+            oCardSection.setAttribute("class", "o-card-section");
+            this.oCardAttributes.forEach((Cards) => {
                 var _a;
-                (_a = this.shadowRoot) === null || _a === void 0 ? void 0 : _a.appendChild(oCards);
+                oCardSection.appendChild(Cards);
+                (_a = this.shadowRoot) === null || _a === void 0 ? void 0 : _a.appendChild(oCardSection);
             });
         }
     }

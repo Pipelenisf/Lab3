@@ -37,15 +37,21 @@ class AppContainer extends HTMLElement{
 
    render(){
     if(this.shadowRoot) {
-            this.shadowRoot.innerHTML= ``;
+            this.shadowRoot.innerHTML= `
+            <link rel="stylesheet" href="../app/style.css">
+            `;
             
             const headerSection = this.ownerDocument.createElement("section")
             
             headerSection.appendChild(this.hAttributes);
             this.shadowRoot.appendChild(headerSection);
 
-            this.oCardAttributes.forEach((oCards) =>{
-                this.shadowRoot?.appendChild(oCards);
+            const oCardSection = this.ownerDocument.createElement("section")
+            oCardSection.setAttribute("class", "o-card-section")
+
+            this.oCardAttributes.forEach((Cards) => {
+                oCardSection.appendChild(Cards);
+                this.shadowRoot?.appendChild(oCardSection);
             })
         
             

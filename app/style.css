@@ -1,0 +1,4 @@
+.o-card-section{
+    display: flex;
+    flex-direction: row;
+}
