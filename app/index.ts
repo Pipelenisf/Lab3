@@ -4,6 +4,7 @@ import Header, {AppHeader} from './components/header/header.js';
 import OfferCard, {oCard} from './components/oCard/oCard.js';
 import Banner, {appBanner} from './components/banner/banner.js';
 import GameShop, {gShop} from './components/gameShop/gameShop.js';
+import Consoles, {appConsoles} from './components/consolesInfo/consoles.js';
 import oCardData from './components/data/oCardData.js';
 class AppContainer extends HTMLElement{
 
@@ -11,6 +12,7 @@ class AppContainer extends HTMLElement{
     oCardAttributes: OfferCard[] = [];
     bannerAttributes: Banner;
     gSAttributes: GameShop;
+    cAttributes: Consoles;
 
    constructor(){
     super();
@@ -52,8 +54,17 @@ class AppContainer extends HTMLElement{
         gSAtt.setAttribute(gShop.gtext, "¡Compra, descarga y juega de inmediato!")
         gSAtt.setAttribute(gShop.button, "Comprar juegos")
         this.gSAttributes = gSAtt;
+    
+    const cAtt = this.ownerDocument.createElement(
+            "app-consoles") as Consoles
+        cAtt.setAttribute(appConsoles.ctitle, "Explora las consolas de videojuegos")
+        cAtt.setAttribute(appConsoles.cimage, "https://assets.nintendo.com/image/upload/f_auto/q_auto/dpr_1.25/c_scale,w_1200/ncom/en_US/switch/site-design-update/switch-family-es")
+        cAtt.setAttribute(appConsoles.ctext, "Familia Nintendo Switch")
+        cAtt.setAttribute(appConsoles.button, "Más detalles")
+        this.cAttributes = cAtt
     }
     
+
    connectedCallback(){
     this.render();
    }
@@ -63,7 +74,7 @@ class AppContainer extends HTMLElement{
             this.shadowRoot.innerHTML= `
             <link rel="stylesheet" href="../app/style.css">
             `;
-            
+
             const headerSection = this.ownerDocument.createElement("header")
             headerSection.appendChild(this.hAttributes);
             this.shadowRoot.appendChild(headerSection);
@@ -90,6 +101,10 @@ class AppContainer extends HTMLElement{
             gameShopSection.appendChild(this.gSAttributes);
             this.shadowRoot.appendChild(gameShopSection)
             gameShopSection.setAttribute("class","gs-section")
+
+            const consolesSection = this.ownerDocument.createElement("section")
+            consolesSection.appendChild(this.cAttributes)
+            this.shadowRoot.appendChild(consolesSection)
         } 
     }
 }
