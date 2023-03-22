@@ -35,20 +35,22 @@ class Banner extends HTMLElement {
     render(){
         if(this.shadowRoot)
         this.shadowRoot.innerHTML=`
-        <section>
+        <section class="banner-section">
             <link rel="stylesheet" href="../app/components/banner/banner.css">
             <div class="background" style='background-image: url("${this.background}");'></div>
             <div class="banner-image" style='background-image: url("${this.banner}");'></div>
-            <div>
+            <div class="content">
                 <span>
                     <h1>Ya disponible</h1>
-                    <button class="call-to-act">Mas información</button>
+                    <button class="call-to-act">Más información</button>
                 </span>
                 <span>
-                    <div class="classification" style="background-image:url("${this.classification}");"></div>
+                    <div class="classification" style='background-image: url("${this.classification}");'></div>
                     <p>Animación de sangre. Violencia de fantasía</p>
                 </span>
             </div>
+            <hr>
+            <h1 class="title">Destacados</h1>
         </section>
         `
     }

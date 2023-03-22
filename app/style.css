@@ -5,6 +5,8 @@ body{
 }
 
 .o-card-section{
+    margin: 0 24px 48px 29px;
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
 }
