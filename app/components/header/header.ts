@@ -5,6 +5,9 @@ export enum AppHeader  {
     "support" = "support",
     "wlist" = "wlist",
     "account" = "account",
+    "games" = "games",
+    "nswitch" = "nswitch",
+    "events" = "events"
 }
 
 class Header extends HTMLElement{
@@ -15,6 +18,9 @@ class Header extends HTMLElement{
     select?: string;
     wlist?: string;
     account?: string;
+    games?: string;
+    nswitch?: string;
+    events?: string;
 
     static get observedAttributes(){
         
@@ -25,6 +31,9 @@ class Header extends HTMLElement{
             select: null,
             wlist: null,
             account: null,
+            games: null,
+            nswitch: null,
+            events: null,
         }
         
         return Object.keys(appH)
@@ -94,10 +103,34 @@ class Header extends HTMLElement{
                         </span>
                     </button>
                 </div>
-            </section>
-
-            <section>
-            
+            </section>    
+            <section class="header-bottom-section">
+                <div class="header-menu">
+                    <button>
+                        <span class="c-transition">
+                            <svg class="secondary-icon" viewBox="0 0 32 32" width="18" size="18">
+                                <path d="${this.games || "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Picture_icon_BLACK.svg/1156px-Picture_icon_BLACK.svg.png"}" fill="currentColor" fill-rule="evenodd"></path>
+                            </svg>
+                            <p class="links">Juegos</p>
+                        </span>
+                    </button>
+                    <button>
+                        <span class="c-transition">
+                            <svg class="secondary-icon" viewBox="0 0 32 32" width="18" size="18">
+                                <path d="${this.nswitch || "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Picture_icon_BLACK.svg/1156px-Picture_icon_BLACK.svg.png"}" fill="currentColor" fill-rule="evenodd"></path>
+                            </svg>
+                            <p class="links">Nintendo Switch</p>
+                        </span>
+                    </button>
+                    <button>
+                        <span class="c-transition">
+                            <svg class="secondary-icon" viewBox="0 0 32 32" width="18" size="18">
+                                <path d="${this.events || "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Picture_icon_BLACK.svg/1156px-Picture_icon_BLACK.svg.png"}" fill="currentColor" fill-rule="evenodd"></path>
+                            </svg>
+                            <p class="links">Noticias y eventos</p>
+                        </span>
+                    </button>
+                </div>
             </section>
             </header>
             

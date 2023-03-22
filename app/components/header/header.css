@@ -40,6 +40,17 @@ header{
 
 }
 
+.header-bottom-section{
+    display: flex;
+    justify-content: center;
+}
+
+.header-menu{
+    width: 486.64px;
+    display: flex;
+    justify-content: space-between;
+}
+
 .logo{
     width: 69px;
     height: 17.06px;

@@ -50,7 +50,6 @@ class Banner extends HTMLElement {
                 </span>
             </div>
             <hr>
-            <h1 class="title">Destacados</h1>
         </section>
         `
     }
