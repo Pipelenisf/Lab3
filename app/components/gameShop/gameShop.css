@@ -24,6 +24,8 @@ h3{
 .consoles-image{
     width: 1144px;
     height: 504.11px;
+    background-position: center;
+    background-size: contain;
 }
 
 span{
