@@ -5,7 +5,9 @@ import OfferCard, {oCard} from './components/oCard/oCard.js';
 import Banner, {appBanner} from './components/banner/banner.js';
 import GameShop, {gShop} from './components/gameShop/gameShop.js';
 import Consoles, {appConsoles} from './components/consolesInfo/consoles.js';
+import News, {appNews} from './components/news/news.js';
 import oCardData from './components/data/oCardData.js';
+import nCardData from './components/data/nCardData.js';
 class AppContainer extends HTMLElement{
 
     hAttributes: Header;
@@ -13,10 +15,20 @@ class AppContainer extends HTMLElement{
     bannerAttributes: Banner;
     gSAttributes: GameShop;
     cAttributes: Consoles;
+    nAttributes: News;
 
    constructor(){
     super();
     this.attachShadow({mode: "open"})
+
+    nCardData.forEach((card) =>{
+        const nCard = this.ownerDocument.createElement(
+            "app-news") as News
+            nCard.setAttribute(appNews.thumbnail, card.thumbnail)
+            nCard.setAttribute(appNews.date, card.date)
+            nCard.setAttribute(appNews.ntitle, card.ntitle)
+            nCard.setAttribute(appNews.content, card.content)
+    })
 
     const aHeader = this.ownerDocument.createElement(
             "app-header") as Header;
