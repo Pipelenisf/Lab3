@@ -1,0 +1,27 @@
+section{
+    margin-bottom: 34px;
+}
+
+.thumbnail{
+    width: 262px;
+    height: 147.38px;
+    background-size: contain;
+}
+
+h3{
+    margin: 0 33.6px 0 0;
+    font-family: 'Figtree', sans-serif;
+    font-size: initial;
+    width: 270px;
+    max-height: 82px;
+    color: rgb(72, 72, 72);
+}
+
+p{
+    font-family: 'Figtree', sans-serif;
+}
+
+.link{
+    color: rgb(230, 0, 18);
+    text-decoration-line: underline;
+}

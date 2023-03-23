@@ -26,6 +26,7 @@ class News extends HTMLElement {
     render() {
         if (this.shadowRoot)
             this.shadowRoot.innerHTML = `
+        <link rel="stylesheet" href="../app/components/news/news.css">
         <section>
             <div class="news-card">
                 <div class="thumbnail" style='background-image: url("${this.thumbnail}");'></div>

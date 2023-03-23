@@ -15,20 +15,11 @@ class AppContainer extends HTMLElement{
     bannerAttributes: Banner;
     gSAttributes: GameShop;
     cAttributes: Consoles;
-    nAttributes: News;
+    nAttributes: News[] = [];
 
    constructor(){
     super();
     this.attachShadow({mode: "open"})
-
-    nCardData.forEach((card) =>{
-        const nCard = this.ownerDocument.createElement(
-            "app-news") as News
-            nCard.setAttribute(appNews.thumbnail, card.thumbnail)
-            nCard.setAttribute(appNews.date, card.date)
-            nCard.setAttribute(appNews.ntitle, card.ntitle)
-            nCard.setAttribute(appNews.content, card.content)
-    })
 
     const aHeader = this.ownerDocument.createElement(
             "app-header") as Header;
@@ -74,6 +65,16 @@ class AppContainer extends HTMLElement{
         cAtt.setAttribute(appConsoles.ctext, "Familia Nintendo Switch")
         cAtt.setAttribute(appConsoles.button, "Más detalles")
         this.cAttributes = cAtt
+
+        nCardData.forEach((card) =>{
+            const nCard = this.ownerDocument.createElement(
+                "app-news") as News
+                nCard.setAttribute(appNews.thumbnail, card.thumbnail)
+                nCard.setAttribute(appNews.date, card.date)
+                nCard.setAttribute(appNews.ntitle, card.ntitle)
+                nCard.setAttribute(appNews.content, card.content)
+                this.nAttributes.push(nCard);
+        })
     }
     
 
@@ -117,6 +118,14 @@ class AppContainer extends HTMLElement{
             const consolesSection = this.ownerDocument.createElement("section")
             consolesSection.appendChild(this.cAttributes)
             this.shadowRoot.appendChild(consolesSection)
+
+            const newsSection = this.ownerDocument.createElement("section")
+            newsSection.setAttribute("class", "news-section")
+
+            this.nAttributes.forEach((card) => {
+                newsSection.appendChild(card);
+                this.shadowRoot?.appendChild(newsSection);
+            })
         } 
     }
 }

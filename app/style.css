@@ -26,3 +26,11 @@ h1{
 app-gameshop{
     width: 100%;
 }
+
+.news-section{
+    margin: 30px 15px 30px 20px;
+    display: flex;
+    justify-content: center;
+    max-width: 100%;
+    flex-wrap: wrap;
+}
